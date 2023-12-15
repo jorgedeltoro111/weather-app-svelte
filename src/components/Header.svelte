@@ -26,7 +26,7 @@
         margin-right: 15%;
     }
     input{
-        border-radius: 10px;
+        border-radius: 25px;
         font-size:x-large;
         padding: 5px;
         border-color: rgb(202, 195, 195);
