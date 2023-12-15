@@ -15,7 +15,6 @@
         height: 110px;  
     }
     .navbar{
-        position: fixed;
         width: 100%;
         top: 0;
         z-index: 1000;
@@ -33,7 +32,7 @@
         border-width: 2px;
     }
     .search-form{
-        margin-left: auto; /* Empuja el formulario hacia la derecha */
+        margin-left: auto; 
         display: flex;
         align-items: center;
     }
