@@ -24,6 +24,9 @@
         margin-right: 15%;
         margin-left: 2%;
     }
+    p{
+        font-size: 20px;
+    }
 </style>
 <div class="CurrentWeather">
     <div class="CurrentWeather-container">
