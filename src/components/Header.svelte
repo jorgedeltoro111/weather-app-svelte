@@ -48,7 +48,7 @@
             <h1>Weather</h1>
         </a>
         <form action="" class="search-form">
-            <input type="text" placeholder="🔍︎ Busca tu ciudad" class="search-input">
+            <input type="text" placeholder="🔍︎ Search your city" class="search-input">
         </form>
     </nav>
 </div>
