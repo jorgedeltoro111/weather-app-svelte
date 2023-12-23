@@ -1,5 +1,31 @@
 <script>
+    import { API_KEY, data, appTemp, cityName, precip, description, clouds, windSpeed} from "../store/store";
+    let city = '';
     
+    async function searchCity(event) {
+        console.log(city);
+        event.preventDefault();
+
+        let apiUrl;
+
+        if (city !== '') {
+            apiUrl = `https://api.weatherbit.io/v2.0/current?key=${API_KEY}&city=${city}`;
+        } else {
+            apiUrl = `https://api.weatherbit.io/v2.0/current?key=${API_KEY}&city=Guadalajara`;
+        }
+
+        const response = await fetch(apiUrl);
+        data.set(await response.json());
+        cityName.set($data.data[0].city_name);
+        appTemp.set($data.data[0].temp);
+        precip.set(data.data[0].precip);
+        description.set($data.data[0].weather.description);
+        windSpeed.set($data.data[0].wind_spd);
+        clouds.set($data.data[0].clouds);
+        console.log('this is the data object', $data);
+        
+    }
+
 </script>
 <style>
     .navbar-brand{
@@ -47,8 +73,8 @@
             <img src="https://i.pinimg.com/originals/97/ef/55/97ef55ab22265ee822cef6fcdeea9685.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
             <h1>Weather</h1>
         </a>
-        <form action="" class="search-form">
-            <input type="text" placeholder="🔍︎ Search your city" class="search-input">
+        <form on:submit={searchCity} class="search-form">
+            <input type="text" placeholder="🔍︎ Search your city" class="search-input" bind:value={city}>
         </form>
     </nav>
 </div>
